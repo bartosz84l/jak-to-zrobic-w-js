@@ -44,10 +44,11 @@ var ContactPage = function() {
   };
 
 
-  this.findMessageBy = function (text, tagName ='*') {
-    return element(by.xpath("//" +tagName+ "[contains(text(),'" + text + "')]"));
+  this.findMessageBy = function () {
+    return element(by.xpath("//h3[contains(text(), 'Your message has been sent.')]"));
 
 };
+
 };
 
 module.exports = new ContactPage();

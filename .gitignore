@@ -30,8 +30,7 @@ node_modules
 results/html
 
 #reports
-*.html
-htmlReport.html
-screenshots
+htmlReport.html/
+screenshots/
 *.png
 

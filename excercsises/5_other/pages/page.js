@@ -47,7 +47,7 @@
   //   browser.get(url);
   // };
 
-  Page.prototype.load = function (url) {
+//   Page.prototype.load = function (url) {
       this.log('load', url);
 
       return this.sleepBeforeStep()

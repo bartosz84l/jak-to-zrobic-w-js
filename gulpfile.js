@@ -10,7 +10,7 @@ var tablereporter = require('jshint-table-reporter');
 
 
 
-gulp.task('elo', function () {
+gulp.task('testTrial', function () {
 
     gulp.src(["/home/bartosz/Desktop/Jacek/excercsises/*.js"])
         .pipe(protractor({
@@ -31,7 +31,7 @@ var exc = {
 
 
 
-gulp.task('try', function(){
+gulp.task('trialslice', function(){
 
     var queue = process.argv.slice(-1);
 
@@ -45,12 +45,12 @@ gulp.task('try', function(){
 
 gulp.task('all-tests', function () {
     for (var i = 1; i <= 3; i++) {
-        test2(i)
+        alltest(i)
     };
 
 });
 
-function test2  (index) {
+function alltest  (index) {
     gulp.src(["/*js"])
         .pipe(protractor({
             configFile: exc[index]
@@ -59,24 +59,21 @@ function test2  (index) {
 
 };
 
+
 gulp.task('clean', function(){
     return del.sync('screenshots');
 });
 
-gulp.task('before', function(){
-    gulp.start('clean');
-});
 
 
-
-gulp.task('after',function(){
+gulp.task('aftertesting',function(){
     console.log("finished testing");
 
 });
 
 
 gulp.task('default', function(){
-    gulp.start('before','all-tests', 'after', 'jslint');
+    gulp.start('clean','all-tests', 'aftertesting', 'jslint');
 });
 
 

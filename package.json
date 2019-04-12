@@ -10,6 +10,9 @@
     "test": "protractor excercsises/1_introduction/conf.js",
     "test1": "protractor excercsises/2_page_object/conf.js",
     "test2": "protractor excercsises/3_synchronization/conf.js",
+    "test3": "protractor excercsises/6_Inheritance2/conf.js",
+    "test4": "protractor excercsises/test1/conf.js",
+    "test5": "protractor excercsises/test2/conf.js",
     "preinstall": "npm install protractor && webdriver-manager update"
   },
   "repository": {

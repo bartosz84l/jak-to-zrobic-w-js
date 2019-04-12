@@ -2,10 +2,9 @@ var contactPage = require('./pages/contact');
 
 describe('Protractor Workshop app', function() {
 
-	beforeEach(function () {
-		contactPage.get();
+	beforeEach(function(){
+		contactPage.load();
 	});
-	var ec = protractor.ExpectedConditions;
 
 	it('hould have Contact page with title "Protractor workshop | Contact us"', function(){
 		expect(contactPage.getTitle()).toEqual("Protractor workshop | Contact us");
@@ -16,10 +15,12 @@ describe('Protractor Workshop app', function() {
 		contactPage.sendEmail('cos@gmail.con');
 		contactPage.sendMsg('hello');
 		contactPage.clickSubmit();
-
 		var message = contactPage.findMessageBy();
-		browser.wait(ec.visibilityOf(message), 15000);
+		contactPage.waitForResponse(message);
 		expect(message.isDisplayed()).toBe(true);
+		
+		
+		
 
 	});
 
